@@ -1,9 +1,1 @@
-[
-["index.html", "YOUR TITLE HERE Chapter 1 Introduction", " YOUR TITLE HERE YOUR NAMES HERE 2020-11-09 Chapter 1 Introduction "],
-["data-sources.html", "Chapter 2 Data sources", " Chapter 2 Data sources "],
-["data-transformation.html", "Chapter 3 Data transformation", " Chapter 3 Data transformation "],
-["missing-values.html", "Chapter 4 Missing values", " Chapter 4 Missing values "],
-["results.html", "Chapter 5 Results", " Chapter 5 Results "],
-["interactive-component.html", "Chapter 6 Interactive component", " Chapter 6 Interactive component "],
-["conclusion.html", "Chapter 7 Conclusion", " Chapter 7 Conclusion "]
-]
+[["index.html", "EDA on NYC Car Accidents Chapter 1 Introduction", " EDA on NYC Car Accidents YOUR NAMES HERE 2021-04-03 Chapter 1 Introduction There are many car accidents in New York State(NYS) everyday. From the government website, we are able to download years of data about daily car accidents in NYS. Variables are in three main categories: case information, individual information and Vehicle information. In this project, we will merge the dataset for the three categories, merge and clean them, and perform exploratory data analysis on the features related to the number and severity of car accidents. "],["data-sources.html", "Chapter 2 Data sources", " Chapter 2 Data sources "],["data-transformation.html", "Chapter 3 Data transformation", " Chapter 3 Data transformation "],["missing-values.html", "Chapter 4 Missing values", " Chapter 4 Missing values "],["results.html", "Chapter 5 Results", " Chapter 5 Results "],["interactive-component.html", "Chapter 6 Interactive component", " Chapter 6 Interactive component "],["conclusion.html", "Chapter 7 Conclusion", " Chapter 7 Conclusion "]]
