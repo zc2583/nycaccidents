@@ -1,2 +1,17 @@
 # Data sources
+### Sources:
+
+https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window
+
+https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window
+
+https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window
+
+
+### Description
+These three sets record vehicle accidents in States of New York from 2017 to 2020. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.  
+
+There are three aspects: vehicle, individual information and case information. Case ID is the common key attribute across three sets.  
+
+Variables include Case Vehicle ID, Vehicle Body Type, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type, Driver Age, Weather Condition, Lighting Condition, Date, Week and so on…  
 
