@@ -1,5 +1,5 @@
 --- 
-title: "YOUR TITLE HERE"
+title: "EDA on NYC Car Accidents"
 author: "YOUR NAMES HERE"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -7,3 +7,8 @@ site: bookdown::bookdown_site
 
 # Introduction
 
+There are many car accidents in New York State(NYS) everyday.  
+
+From the government website, we are able to download years of data about daily car accidents in NYS. Variables are in three main categories: "case information", "individual information" and "Vehicle information".  
+
+In this project, we will merge the dataset for the three categories, merge and clean them, and perform exploratory data analysis on the features related to the number and severity of car accidents.
