@@ -122,15 +122,30 @@ Though the static plot can show this trend, here we want to visualize this trend
   var innerWidth = w - margin.left - margin.right;
   var innerHeight = h - margin.top - margin.bottom;
 
-  var bardata = [75712,64662,69232,61958,72479,75558,73020,69533,69046,80769,85453,84195];
+  //var bardata = [75712,64662,69232,61958,72479,75558,73020,69533,69046,80769,85453,84195];
+  var bardata = [
+    {month: `Jan`, value: 75712},
+    {month: `Feb`, value: 64662},
+    {month: `Mar`, value: 69232},
+    {month: `Apr`, value: 61958},
+    {month: `May`, value: 72479},
+    {month: `Jun`, value: 75558},
+    {month: `Jul`, value: 73020},
+    {month: `Aug`, value: 69533},
+    {month: `Sep`, value: 69046},
+    {month: `Oct`, value: 80769},
+    {month: `Nov`, value: 85453},
+    {month: `Dec`, value: 84195},
+    ];
+
 
   var xScale = d3.scaleBand()
-      .domain(d3.range(bardata.length))
-      .range([1, innerWidth])
+      .domain(bardata.map(d => d.month))
+      .range([0, innerWidth])
       .paddingInner(.1);
 
   var yScale = d3.scaleLinear()
-      .domain([50000, d3.max(bardata)])
+      .domain([50000, d3.max(bardata.map(d => d.value))])
       .range([innerHeight, 0])
 
   var xAxis = d3.axisBottom()
@@ -146,14 +161,7 @@ Though the static plot can show this trend, here we want to visualize this trend
       .attr("width", w)
       .attr("height", h);
 
-// add background rectangle
 
-  svg.append("rect")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("width", w)
-      .attr("height", h)
-      .attr("fill", "pink");
 
 // add bars as a group
 
@@ -164,7 +172,7 @@ Though the static plot can show this trend, here we want to visualize this trend
       .data(bardata);
 
   bars.enter().append("rect")
-      .attr("x", (d, i) => xScale(i))
+      .attr("x", d => xScale(d.month))
       .attr("y", 50000)      
       .attr("width", xScale.bandwidth())
       //.attr("height", d => innerHeight - yScale(d))
@@ -175,9 +183,9 @@ Though the static plot can show this trend, here we want to visualize this trend
       .delay(function(d,i){return (i*100);})
       .duration(function(d,i){return (1000+(i*500));})
       //.attr("x", (d, i) => xScale(i)+1)
-      .attr("y", d => yScale(d))
+      .attr("y", d => yScale(d.value))
       //.attr("width", xScale.bandwidth())
-      .attr("height", d => innerHeight - yScale(d))
+      .attr("height", d => innerHeight - yScale(d.value))
       //.attr("fill", "blue");
 
 // add axes
