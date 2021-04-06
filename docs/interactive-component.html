@@ -105,7 +105,7 @@
 <h1><span class="header-section-number">Chapter 6</span> Interactive component</h1>
 <div id="up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state" class="section level2">
 <h2><span class="header-section-number">6.1</span> Up-and-Down Trend of Monthly Number of Accidents in New York State</h2>
-<p>This D3 animated plot is inspired by the bar chart of the monthly accidents. There is an obvious up-and down trend across years. The number of accidents is higher in the beginning, middle and the end of the year.<br />
+<p>This D3 animated plot is inspired by the bar chart of the monthly accidents. There is an obvious up-and down trend across months. The number of accidents is higher in the beginning, middle and the end of the year.<br />
 Though the static plot can show this trend, here we want to visualize this trend in a more compelling and animated way.</p>
 <script src="https://d3js.org/d3.v6.js"></script>
 <div id="mysvg">
@@ -160,7 +160,7 @@ Though the static plot can show this trend, here we want to visualize this trend
   var bars = svg.append("g")
       .attr("id", "plot")
       .attr("transform", `translate (${margin.left}, ${margin.top})`)
-    .selectAll("rect")
+      .selectAll("rect")
       .data(bardata);
 
   bars.enter().append("rect")
@@ -174,7 +174,7 @@ Though the static plot can show this trend, here we want to visualize this trend
       .transition()
       .delay(function(d,i){return (i*100);})
       .duration(function(d,i){return (1000+(i*500));})
-      //.attr("x", (d, i) => xScale(i))
+      //.attr("x", (d, i) => xScale(i)+1)
       .attr("y", d => yScale(d))
       //.attr("width", xScale.bandwidth())
       .attr("height", d => innerHeight - yScale(d))
