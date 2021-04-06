@@ -6,4 +6,5 @@ data-transformation
 missing-values
 results
 interactive-component
+up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state
 conclusion

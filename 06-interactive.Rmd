@@ -1,3 +1,93 @@
 # Interactive component
+## Up-and-Down Trend of Monthly Number of Accidents in New York State
+This D3 animated plot is inspired by the bar chart of the monthly accidents. There is an obvious up-and down trend across years. The number of accidents is higher in the beginning, middle and the end of the year.  
+Though the static plot can show this trend, here we want to visualize this trend in a more compelling and animated way.  
+
+
+<script src="https://d3js.org/d3.v6.js"></script>
+<div id="mysvg"></div>
+<script>
+
+// Create svg and initial bars
+
+  var w = 600;
+  var h = 500;
+  var margin = {top: 25, right: 25, bottom: 25,
+      left: 50};
+  var innerWidth = w - margin.left - margin.right;
+  var innerHeight = h - margin.top - margin.bottom;
+
+  var bardata = [75712,64662,69232,61958,72479,75558,73020,69533,69046,80769,85453,84195];
+
+  var xScale = d3.scaleBand()
+      .domain(d3.range(bardata.length))
+      .range([1, innerWidth])
+      .paddingInner(.1);
+
+  var yScale = d3.scaleLinear()
+      .domain([50000, d3.max(bardata)])
+      .range([innerHeight, 0])
+
+  var xAxis = d3.axisBottom()
+      .scale(xScale);
+
+  var yAxis = d3.axisLeft()
+      .scale(yScale);
+
+// add svg
+
+  var svg = d3.select("div#mysvg")
+    .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+// add background rectangle
+
+  svg.append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", w)
+      .attr("height", h)
+      .attr("fill", "pink");
+
+// add bars as a group
+
+  var bars = svg.append("g")
+      .attr("id", "plot")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+    .selectAll("rect")
+      .data(bardata);
+
+  bars.enter().append("rect")
+      .attr("x", (d, i) => xScale(i))
+      .attr("y", 50000)      
+      .attr("width", xScale.bandwidth())
+      //.attr("height", d => innerHeight - yScale(d))
+      .attr("fill", "blue");
+    
+  svg.selectAll('rect')
+      .transition()
+      .delay(function(d,i){return (i*100);})
+      .duration(function(d,i){return (1000+(i*500));})
+      //.attr("x", (d, i) => xScale(i))
+      .attr("y", d => yScale(d))
+      //.attr("width", xScale.bandwidth())
+      .attr("height", d => innerHeight - yScale(d))
+      //.attr("fill", "blue");
+
+// add axes
+
+  svg.append("g")
+      .attr("class", "xAxis")
+      .attr("transform", `translate (${margin.left}, ${h - margin.bottom})`)
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "yAxis")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+      .call(yAxis);
+      
+
+</script>
 
 

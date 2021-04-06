@@ -24,7 +24,7 @@
 <meta name="author" content="YOUR NAMES HERE" />
 
 
-<meta name="date" content="2021-04-03" />
+<meta name="date" content="2021-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,9 @@
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-component.html"><a href="interactive-component.html#up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state"><i class="fa fa-check"></i><b>6.1</b> Up-and-Down Trend of Monthly Number of Accidents in New York State</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -101,7 +103,99 @@
             <section class="normal" id="section-">
 <div id="interactive-component" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Interactive component</h1>
+<div id="up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state" class="section level2">
+<h2><span class="header-section-number">6.1</span> Up-and-Down Trend of Monthly Number of Accidents in New York State</h2>
+<p>This D3 animated plot is inspired by the bar chart of the monthly accidents. There is an obvious up-and down trend across years. The number of accidents is higher in the beginning, middle and the end of the year.<br />
+Though the static plot can show this trend, here we want to visualize this trend in a more compelling and animated way.</p>
+<script src="https://d3js.org/d3.v6.js"></script>
+<div id="mysvg">
 
+</div>
+<script>
+
+// Create svg and initial bars
+
+  var w = 600;
+  var h = 500;
+  var margin = {top: 25, right: 25, bottom: 25,
+      left: 50};
+  var innerWidth = w - margin.left - margin.right;
+  var innerHeight = h - margin.top - margin.bottom;
+
+  var bardata = [75712,64662,69232,61958,72479,75558,73020,69533,69046,80769,85453,84195];
+
+  var xScale = d3.scaleBand()
+      .domain(d3.range(bardata.length))
+      .range([1, innerWidth])
+      .paddingInner(.1);
+
+  var yScale = d3.scaleLinear()
+      .domain([50000, d3.max(bardata)])
+      .range([innerHeight, 0])
+
+  var xAxis = d3.axisBottom()
+      .scale(xScale);
+
+  var yAxis = d3.axisLeft()
+      .scale(yScale);
+
+// add svg
+
+  var svg = d3.select("div#mysvg")
+    .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+// add background rectangle
+
+  svg.append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", w)
+      .attr("height", h)
+      .attr("fill", "pink");
+
+// add bars as a group
+
+  var bars = svg.append("g")
+      .attr("id", "plot")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+    .selectAll("rect")
+      .data(bardata);
+
+  bars.enter().append("rect")
+      .attr("x", (d, i) => xScale(i))
+      .attr("y", 50000)      
+      .attr("width", xScale.bandwidth())
+      //.attr("height", d => innerHeight - yScale(d))
+      .attr("fill", "blue");
+    
+  svg.selectAll('rect')
+      .transition()
+      .delay(function(d,i){return (i*100);})
+      .duration(function(d,i){return (1000+(i*500));})
+      //.attr("x", (d, i) => xScale(i))
+      .attr("y", d => yScale(d))
+      //.attr("width", xScale.bandwidth())
+      .attr("height", d => innerHeight - yScale(d))
+      //.attr("fill", "blue");
+
+// add axes
+
+  svg.append("g")
+      .attr("class", "xAxis")
+      .attr("transform", `translate (${margin.left}, ${h - margin.bottom})`)
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "yAxis")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+      .call(yAxis);
+      
+
+</script>
+
+</div>
 </div>
             </section>
 
