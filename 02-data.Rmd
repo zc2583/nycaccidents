@@ -15,3 +15,25 @@ There are three aspects: vehicle, individual information and case information. C
 
 Variables include Case Vehicle ID, Vehicle Body Type, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type, Driver Age, Weather Condition, Lighting Condition, Date, Week and so on…  
 
+
+### Potential Questions
+We got our data from the Internet which came as .csv files.
+
+The data we used are from NYS DMV which contains 3 data sets. Those three sets contain attributes about each vehicle involved in a crash as reported to NYS DMV. Variables include Case Vehicle ID, Vehicle Body Type	, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type... Most of which are categorical.
+
+To be more specific, our interest falls on several aspects: 
+
+About Accident Cases:
+1.	Distribution of the number of accidents across time (Date, time, weekdays)?
+2.	Any environmental factors (weather condition, road surface, lighting condition) related to accidents?
+
+About Drivers:
+1.	Association between Injured severity and safety equipment?
+2.	Association between Injured severity and seating position?
+
+About Vehicle:
+1.	Relationship between number of accidents and Vehicle year?
+2.	Relationship between number of accidents and number of occupants?
+3.	Relationship between number of accidents and number of vehicle cylinder?
+
+The original data contains more than 800,000 samples each. For the convenience of later use, we did some random sampling. Before diving into the visualization work, we found some potential problems around the our data. Firstly, there are some misssing values in the data. Secondly, we need to select some variales that contribute the most to car crashes. Lastly, since most of our variables are categorical, we need to find better methods for visualization.

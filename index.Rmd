@@ -7,8 +7,18 @@ site: bookdown::bookdown_site
 
 # Introduction
 
-There are many car accidents in New York State(NYS) everyday.  
+There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. Car crashes can be effectively prevented if we avoid to drive when dangerous factors exist. And that is the one of the reason that we can interested in researches of car crashes data.
 
-From the government website, we are able to download years of data about daily car accidents in NYS. Variables are in three main categories: "case information", "individual information" and "Vehicle information".  
+To detetct what factors contributed most to car crashes, we looked into 3 data sets from NYS DMV and tried to explain the correlation between those variables by using different visualization methods.
 
-In this project, we will merge the dataset for the three categories, merge and clean them, and perform exploratory data analysis on the features related to the number and severity of car accidents.
+Several questions that we are interested in are listed as below.
+
+1. Descriptive analysis of variables. Select some intuitive factors which lead to vehicle crashes and see if there is any association. As for the variable contributing factor, is there any noticeable cluster or trend?
+
+2. Using more variables to explore on a larger dataset, detect if there is any variable that largely contributed to crashes but neglected in question 1. Try to use as many as possible methods such as to find associations between variables.
+
+3. From all the plots we got, what’s the new information we got? Good suggestions to avoid car crashes?
+
+Also, diving into event type, we can check if there are some particular associations between action prior to accident and event type or between contributing factor and event types and so on to see which could be the most probable cause of an event?
+
+We hope this article will help readers know more about how to avoid car accidents and have a safe drive!
