@@ -27,3 +27,5 @@ index = sample(nrow(df),10000, replace = FALSE)
 df <- df[index,]
 ```
 
+## Unify Missing Values
+Except for "NA", some inputs are labeled as "Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None" and so on. Thus, we also change all of these labels which provide no information as "NA".  
