@@ -24,7 +24,7 @@
 <meta name="author" content="YOUR NAMES HERE" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,8 +74,11 @@
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.0.1</b> Sources:</a></li>
 <li class="chapter" data-level="2.0.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.0.2</b> Description</a></li>
+<li class="chapter" data-level="2.0.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.0.3</b> Potential Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a><ul>
@@ -104,13 +107,20 @@
 <div id="header">
 <h1 class="title">EDA on NYC Car Accidents</h1>
 <p class="author"><em>YOUR NAMES HERE</em></p>
-<p class="date"><em>2021-04-06</em></p>
+<p class="date"><em>2021-04-08</em></p>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>There are many car accidents in New York State(NYS) everyday.</p>
-<p>From the government website, we are able to download years of data about daily car accidents in NYS. Variables are in three main categories: “case information”, “individual information” and “Vehicle information”.</p>
-<p>In this project, we will merge the dataset for the three categories, merge and clean them, and perform exploratory data analysis on the features related to the number and severity of car accidents.</p>
+<p>There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. Car crashes can be effectively prevented if we avoid to drive when dangerous factors exist. And that is the one of the reason that we can interested in researches of car crashes data.</p>
+<p>To detetct what factors contributed most to car crashes, we looked into 3 data sets from NYS DMV and tried to explain the correlation between those variables by using different visualization methods.</p>
+<p>Several questions that we are interested in are listed as below.</p>
+<ol style="list-style-type: decimal">
+<li><p>Descriptive analysis of variables. Select some intuitive factors which lead to vehicle crashes and see if there is any association. As for the variable contributing factor, is there any noticeable cluster or trend?</p></li>
+<li><p>Using more variables to explore on a larger dataset, detect if there is any variable that largely contributed to crashes but neglected in question 1. Try to use as many as possible methods such as to find associations between variables.</p></li>
+<li><p>From all the plots we got, what’s the new information we got? Good suggestions to avoid car crashes?</p></li>
+</ol>
+<p>Also, diving into event type, we can check if there are some particular associations between action prior to accident and event type or between contributing factor and event types and so on to see which could be the most probable cause of an event?</p>
+<p>We hope this article will help readers know more about how to avoid car accidents and have a safe drive!</p>
 
 </div>
             </section>

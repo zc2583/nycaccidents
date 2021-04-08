@@ -2,7 +2,9 @@ introduction
 data-sources
 sources
 description
+potential-questions
 data-transformation
+general-method
 missing-values
 results
 interactive-component

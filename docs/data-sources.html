@@ -24,7 +24,7 @@
 <meta name="author" content="YOUR NAMES HERE" />
 
 
-<meta name="date" content="2021-04-06" />
+<meta name="date" content="2021-04-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,8 +74,11 @@
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.0.1</b> Sources:</a></li>
 <li class="chapter" data-level="2.0.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.0.2</b> Description</a></li>
+<li class="chapter" data-level="2.0.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.0.3</b> Potential Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a><ul>
@@ -114,6 +117,23 @@
 <p>These three sets record vehicle accidents in States of New York from 2017 to 2020. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.</p>
 <p>There are three aspects: vehicle, individual information and case information. Case ID is the common key attribute across three sets.</p>
 <p>Variables include Case Vehicle ID, Vehicle Body Type, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type, Driver Age, Weather Condition, Lighting Condition, Date, Week and so on…</p>
+</div>
+<div id="potential-questions" class="section level3">
+<h3><span class="header-section-number">2.0.3</span> Potential Questions</h3>
+<p>We got our data from the Internet which came as .csv files.</p>
+<p>The data we used are from NYS DMV which contains 3 data sets. Those three sets contain attributes about each vehicle involved in a crash as reported to NYS DMV. Variables include Case Vehicle ID, Vehicle Body Type , Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type… Most of which are categorical.</p>
+<p>To be more specific, our interest falls on several aspects:</p>
+<p>About Accident Cases:
+1. Distribution of the number of accidents across time (Date, time, weekdays)?
+2. Any environmental factors (weather condition, road surface, lighting condition) related to accidents?</p>
+<p>About Drivers:
+1. Association between Injured severity and safety equipment?
+2. Association between Injured severity and seating position?</p>
+<p>About Vehicle:
+1. Relationship between number of accidents and Vehicle year?
+2. Relationship between number of accidents and number of occupants?
+3. Relationship between number of accidents and number of vehicle cylinder?</p>
+<p>The original data contains more than 800,000 samples each. For the convenience of later use, we did some random sampling. Before diving into the visualization work, we found some potential problems around the our data. Firstly, there are some misssing values in the data. Secondly, we need to select some variales that contribute the most to car crashes. Lastly, since most of our variables are categorical, we need to find better methods for visualization.</p>
 
 </div>
 </div>
