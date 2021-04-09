@@ -16,16 +16,16 @@ head(case_data_sample)
 ```{r eval=FALSE}
 vehicle_data_full <- read_csv("Vehicle.csv")
 set.seed(1)
-index = sample(nrow(df),10000, replace = FALSE)
-df <- df[index,]
+index = sample(nrow(vehicle_data_full),10000, replace = FALSE)
+vehicle_data_full <- vehicle_data_full[index,]
 ```
 
 ```{r  eval=FALSE}
 individual_data_full <- read_csv("Individual.csv")
-set.seed(1)
-index = sample(nrow(df),10000, replace = FALSE)
-df <- df[index,]
+set.seed(2)
+index = sample(nrow(individual_data_full),10000, replace = FALSE)
+individual_data_full <- individual_data_full[index,]
 ```
 
 ## Unify Missing Values
-Except for "NA", some inputs are labeled as "Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None" and so on. Thus, we also change all of these labels which provide no information as "NA".  
+Except for "NA", some inputs are labeled as "Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None" and so on. Thus, we also changed all of these labels which provide no information as "NA".  

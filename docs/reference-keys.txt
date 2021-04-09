@@ -7,7 +7,13 @@ data-transformation
 general-method
 unify-missing-values
 missing-values
+vehicle
+case
+individual
 results
+vehicles
+case-1
+individual-1
 interactive-component
 up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state
 conclusion

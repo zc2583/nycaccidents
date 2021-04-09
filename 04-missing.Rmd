@@ -1,1 +1,73 @@
 # Missing values
+Since we have three datasets and they do not have a common key attribute for us to merge them together, we decided to visualize the missing values in three seperate graphs.  
+
+## Vehicle
+```{r,message = FALSE,echo = FALSE}
+library(tidyverse)
+library(naniar)
+```
+
+```{r,message = FALSE,echo = FALSE}
+df1 <- read_csv("~/GR5702/Project/Vehicle.csv")
+```
+
+```{r,echo = FALSE}
+label.na <- c("Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None")
+for (i in 1:ncol(df1)) {
+  for (j in 1:nrow(df1)) {
+    if(df1[j,i] %in% label.na ){
+      df1[j,i] <- NA
+      }
+  }
+}
+```
+
+```{r,echo = FALSE}
+gg_miss_var(df1, show_pct = TRUE)
+```
+
+## Case
+```{r,message = FALSE,echo = FALSE}
+df2 <- read_csv("~/GR5702/Project/Case.csv")
+```
+
+```{r,echo = FALSE}
+label.na <- c("Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None")
+for (i in 1:ncol(df2)) {
+  for (j in 1:nrow(df2)) {
+    if(df2[j,i] %in% label.na ){
+      df2[j,i] <- NA
+      }
+  }
+}
+```
+
+```{r,echo = FALSE}
+gg_miss_var(df2, show_pct = TRUE)
+```
+
+In this dataset, We had 18 variables in total and we dropped 2 of them. The majority of $DOT.Reference.Marker.Location$ are missing values and the $Pedestrian.Bicyclist.Action$ contains a lot of "Not Applicable" values which cannot offer the information we wnat. 
+
+After transformation and cleaning of the dataset, we got the final data for visualiation use. 
+
+## Individual
+```{r,message = FALSE,echo = FALSE}
+df3 <- read_csv("~/GR5702/Project/Individual.csv")
+```
+
+```{r,echo = FALSE}
+label.na <- c("Unknown","Not Applicable","UNKNOWN VEHICLE","Not Entered","None")
+for (i in 1:ncol(df3)) {
+  for (j in 1:nrow(df3)) {
+    if(df3[j,i] %in% label.na ){
+      df3[j,i] <- NA
+      }
+  }
+}
+```
+
+```{r,echo = FALSE}
+gg_miss_var(df3, show_pct = TRUE)
+```
+
+In this dataset, we have 15 variables in total. "Transported_by", "Injury Location", "Victim Status" and "Injury Description" have high percent of missing data within the variable.  

@@ -24,7 +24,7 @@
 <meta name="author" content="YOUR NAMES HERE" />
 
 
-<meta name="date" content="2021-04-08" />
+<meta name="date" content="2021-04-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -80,8 +80,16 @@
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
 <li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#unify-missing-values"><i class="fa fa-check"></i><b>3.2</b> Unify Missing Values</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#vehicle"><i class="fa fa-check"></i><b>4.1</b> Vehicle</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#case"><i class="fa fa-check"></i><b>4.2</b> Case</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#individual"><i class="fa fa-check"></i><b>4.3</b> Individual</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#vehicles"><i class="fa fa-check"></i><b>5.1</b> Vehicles</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#case-1"><i class="fa fa-check"></i><b>5.2</b> Case</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#individual-1"><i class="fa fa-check"></i><b>5.3</b> Individual</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a><ul>
 <li class="chapter" data-level="6.1" data-path="interactive-component.html"><a href="interactive-component.html#up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state"><i class="fa fa-check"></i><b>6.1</b> Up-and-Down Trend of Monthly Number of Accidents in New York State</a></li>
 </ul></li>
@@ -107,7 +115,119 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
+<p>In this part, we will show our EDA results in three categories related to vehicles involved in accidents, cases information and individuals in accidents.</p>
+<div id="vehicles" class="section level2">
+<h2><span class="header-section-number">5.1</span> Vehicles</h2>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+From this plot, we can see:</p>
+<ul>
+<li>Most of the accidents happen when cars go straight Ahead.<br />
+</li>
+<li>Many accidents also happen during parking, stopping in traffic, slowing and stopping and making left or right turn.<br />
+</li>
+<li>The patterns of all these prior actions are similar between 2018 and 2019. One interesting thing is that in 2018, there is no accidents related to Police Pursuit, but in 2019, there is a few cases.</li>
+</ul>
+<p>Thus, it looks like in the situations when drivers are going fast ahead or driving in a crowded place, such as in traffic or in parking lot, accidents are more likely to happen than the other prior actions.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Since there are about 30 unique types of descriptions on accidents, I select the top 11 most frequent and reasonable textual descriptions on the causes of accidents. From this plot, we can see that:</p>
+<ul>
+<li>“Driver Inattention” is the top reason causing accidents.<br />
+</li>
+<li>“Following too closely”, “Failure to yield Right-of-Way” and “Unsafe Speed” also cause many accidents.<br />
+</li>
+<li>In 2019, there are further more accidents about “Passing or lane Usage Improper” and “Backing Unsafely”.<br />
+</li>
+<li>In 2019, there are much more accidents due to “Animal’s” Action.<br />
+</li>
+<li>In 2019, there are less accidents due to “Alcohol Involvement”. Probably New York States took this issue seriously in 2019.<br />
+Thus, the top four categories seem to be the frequent causes for accidents. The pattern fro 2018 is different from 2019 in the other smaller causes.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-23-1.png" width="960" />
+This is a mosaic plot with 3 variable: Vehicle_Body_Type, Contributing_Factor and Year.
+Since there are multiple unique Vehicle Body Types, we filter on the top 5 types involved in accidents. We also filter on contributing_Factor: E stands for “environmental factor” and “V” stands for “vehicle factor”.<br />
+From this plot, we can see:</p>
+<ul>
+<li>There are more accidents of “4 Door Sedan” and “Suburban” than the other vehicle types. Probably majority of vehicle is of these two types.<br />
+</li>
+<li>There are more accidents related to environmental/vehicle factor in 2019 than in 2018.<br />
+</li>
+<li>Larger proportion of accidents of “4 Door Sedan” and “2 Door Sedan” is related to “environmental factor” in 2019 than in 2018.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-24-1.png" width="960" /></p>
+<p>From this plot, we can see:</p>
+<ul>
+<li>For “4 Engine Cylinder” vehicles, “Sedan” and “Suburban” are more likely to have accidents.</li>
+<li>For “8 Engine Cylinder” vehicles, “Pickup Truck” and “Van Truck” are more likely to have accidents.</li>
+<li>There are a few cars with “5 Engine Cylinder” involved in accidents.</li>
+</ul>
+</div>
+<div id="case-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Case</h2>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>For the case data, we looked into the count of different types of accidents at first. We can see apparently from the bar plot that:</p>
+<ul>
+<li>Property Damage Accident occurred the most.<br />
+</li>
+<li>Property Damage with Injury Accident.<br />
+</li>
+<li>Fatal Accident happened the least.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+Then we used a cleveland plot to see where accidents happened the counties in New York State with the top 8 accident frequency:</p>
+<ul>
+<li>Crash accidents happened the most in “Queens” County.</li>
+<li>A very large amount of accidents happen in “Queens”, “Nassau”, “Suffolk” and “Kings”.<br />
+</li>
+<li>There are other counties other than these 8 counties, but each of them has a relatively much smaller proportion of accidents when compared with the first 4 counties above.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>In this plot, we visualize the variation of number of accidents in Hours of a day. The line plots are split by years.</p>
+<ul>
+<li>Two years have the same trend.<br />
+</li>
+<li>From 12PM-3PM, number of accidents decreases. It’s going late, so there are fewer cars on the road and thus fewer accidents.<br />
+</li>
+<li>From 4PM-8PM, number of accidents increases because people in various occupations are start going to work.<br />
+</li>
+<li>From 9PM-10PM, the number of accidents drops a little bit. We are not sure why. probably many people has already arrived to their work places, so there are relatively fewer cars on the road.<br />
+</li>
+<li>From 11PM-17PM, the number of accidents keeps increasing and finally reaches the peak of the day at 17PM. In this period, the city is in the busiest mode. Especially at around 17PM, people finish their jobs and travel to other places.<br />
+</li>
+<li>Since 18PM, the number of accidents keeps dropping as the sun goes down.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-29-1.png" width="960" /></p>
+<p>In this plot, we use a heatmap to show the frequency of accidents in specific “Road Type” and “Road Surface Condition”. In “Road Type”, “straight and level” has much more intensive weight than the other types because majority of road is this type. Thus, for visualization purpose, we exclude this type and focus on the other less common types:</p>
+<ul>
+<li>Even if we exclude the “straight and level” road type, “straight and Grade” has the top frequency. This is aligned with the finding in the first section that most of accidents happen when the cars go straight ahead. Probably some drivers tend to drive faster in straight road.<br />
+</li>
+<li>Whatever the road surface is dry, wet or with snow, the “Straight and Grade” road still have the largest frequency.</li>
+<li>When the road is on “Hill Crest”, there are only a few accidents. Of course there are much less these road types. However, on hill crest, drivers are also drive more carefully than usual.</li>
+</ul>
+</div>
+<div id="individual-1" class="section level2">
+<h2><span class="header-section-number">5.3</span> Individual</h2>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>From this plot, we can see that:</p>
+<ul>
+<li>In each age group, more males are involved in accidents than females.<br />
+</li>
+<li>The number of accidents is low before 18 years old. These people are mostly the passengers.<br />
+</li>
+<li>After 18 years old, the number of accidents increases dramatically and reaches the peak in age of 25. Probably young people are tend to drive less safely.<br />
+</li>
+<li>Then, the number of accidents is constantly decreasing.</li>
+</ul>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>Since majority of people in the accident are uninjured or only minor injured, we decided to explore the patterns in serious injuries.</p>
+<ul>
+<li>More males are injured to death than females.<br />
+</li>
+<li>Females are easire to be shocked.<br />
+</li>
+<li>More males are recorded as unconscious or semiconscious. It is possible that males tend to involve in more serious accidents.</li>
+</ul>
 
+</div>
 </div>
             </section>
 
@@ -165,6 +285,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
