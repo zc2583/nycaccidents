@@ -34,6 +34,7 @@ df1 %>% select(`Action Prior to Accident`, Year) %>%
   ggtitle("Frequency of Prior Accident Actions per Year")
   
 ```
+
 From this plot, we can see:  
 
 * Most of the accidents happen when cars go straight Ahead.  
@@ -85,6 +86,7 @@ df_mosaic <- df1 %>%
 mosaic(Contributing_Factor~Vehicle_Body_Type+Year, direction = c("v","h","v"),
        data=df_mosaic)
 ```
+
 This is a mosaic plot with 3 variable: Vehicle_Body_Type, Contributing_Factor and Year. 
 Since there are multiple unique Vehicle Body Types, we filter on the top 5 types involved in accidents. We also filter on contributing_Factor: E stands for "environmental factor" and "V" stands for "vehicle factor".  
 From this plot, we can see:  
@@ -150,6 +152,7 @@ ggplot(county, aes(n,fct_relevel(`County Name`, f))) +
        y = "County",
        x= "Count") 
 ```
+
 Then we used a cleveland plot to see where accidents happened the counties in New York State with the top 8 accident frequency:  
 
 * Crash accidents happened the most in "Queens" County. 
