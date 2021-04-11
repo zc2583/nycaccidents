@@ -11,6 +11,8 @@ library(vcd)
 library(GGally)
 library(parcoords)
 library(treemap)
+library(scales)
+library(ggalluvial)
 ```
 
 ```{r,message = FALSE,echo = FALSE}
@@ -28,7 +30,8 @@ df1 %>% select(`Action Prior to Accident`, Year) %>%
   scale_fill_gradient(low = "green", high = "red")+
   facet_wrap(~Year) +
   coord_flip() + 
-  labs(y = "Number of Accidents", x="Actions Prior to Accidents")
+  labs(y = "Number of Accidents", x="Actions Prior to Accidents") +
+  ggtitle("Frequency of Prior Accident Actions per Year")
   
 ```
 From this plot, we can see:  
@@ -57,7 +60,8 @@ df1 %>%
   scale_fill_gradient(low = "green", high = "red")+
   facet_wrap(~Year) +
   coord_flip()+ 
-  labs(y = "Number of Accidents", x="Accidents Descriptions")
+  labs(y = "Number of Accidents", x="Accidents Descriptions") +
+  ggtitle("Frequency of Accident Causes per Year")
 ```
 
 Since there are about 30 unique types of descriptions on accidents, I select the top 11 most frequent and reasonable textual descriptions on the causes of accidents. From this plot, we can see that:  
@@ -119,7 +123,8 @@ df2<-read_csv("~/GR5702/Project/Case.csv")
 ggplot(df2, aes(`Crash Descriptor`)) +
   geom_bar(aes(fill=`Crash Descriptor`),show.legend = FALSE) +
   labs(fill = "Description of Crash") +
-  coord_flip()
+  coord_flip() +
+  ggtitle("Frequency of Types of Accidents")
 ```
 
 For the case data, we looked into the count of different types of accidents at first. We can see apparently from the bar plot that:  
@@ -141,9 +146,9 @@ f<-rev(as.character(county$`County Name`))
 
 ggplot(county, aes(n,fct_relevel(`County Name`, f))) +
   geom_point(color = "blue") +
-  labs(title = "Accident counts in different counties",
+  labs(title = "Accident Counts in Different Counties",
        y = "County",
-       x= "Count")
+       x= "Count") 
 ```
 Then we used a cleveland plot to see where accidents happened the counties in New York State with the top 8 accident frequency:  
 
@@ -160,7 +165,8 @@ df2 %>%
     ggplot(aes(Hour,n)) +
     geom_point(aes(color=as.factor(Year)))+
     geom_line(aes(color=as.factor(Year))) + 
-  labs(x="Hour of a Day",y="Count",color="Year")
+  labs(x="Hour of a Day",y="Count",color="Year") +
+  ggtitle("Line Plot of Number of Accidents in Hours of a Day")
 ```
 
 In this plot, we visualize the variation of number of accidents in Hours of a day. The line plots are split by years.  
@@ -182,7 +188,8 @@ df2 %>%
   ggplot(aes(x=`Road Descriptor`,y=`Road Surface Conditions`,fill=n)) +
     geom_tile(show.legend = F) +
   scale_fill_gradient(low = "white", high = "red") +
-  labs(x="Road Type")
+  labs(x="Road Type") +
+  ggtitle("Heatmap of Road Surface Condition vs. Road Type")
 ```
 
 In this plot, we use a heatmap to show the frequency of accidents in specific "Road Type" and "Road Surface Condition". In "Road Type", "straight and level" has much more intensive weight than the other types because majority of road is this type. Thus, for visualization purpose, we exclude this type and focus on the other less common types:  
@@ -206,7 +213,8 @@ df3 %>%
   ggplot(aes(Age,Count)) +
   geom_point(aes(color=as.factor(Sex)))+
     geom_line(aes(color=as.factor(Sex))) + 
-  labs(x="Age",y="Count of Accidents",color="Sex")
+  labs(x="Age",y="Count of Accidents",color="Sex") +
+  ggtitle("Line Plot of Number of Accidents across Age Splited by Sexes")
   
 ```
 
@@ -246,3 +254,48 @@ Since majority of people in the accident are uninjured or only minor injured, we
 * More males are injured to death than females.  
 * Females are easire to be shocked.  
 * More males are recorded as unconscious or semiconscious. It is possible that males tend to involve in more serious accidents.  
+
+```{r,message = FALSE,echo = FALSE}
+data <- read_csv("~/GR5702/Project/newsample.csv", col_types = cols(
+  Year = col_double(),
+  `Case Individual ID` = col_double(),
+  `Case Vehicle ID` = col_double(),
+  `Victim Status` = col_character(),
+  `Role Type` = col_character(),
+  `Seating Position` = col_character(),
+  Ejection = col_character(),
+  `License State Code` = col_character(),
+  Sex = col_character(),
+  `Transported By` = col_character(),
+  `Safety Equipment` = col_character(),
+  `Injury Descriptor` = col_character(),
+  `Injury Location` = col_character(),
+  `Injury Severity` = col_character(),
+  Age = col_double()
+))
+
+data %>% 
+  filter(Sex != "U") %>%
+  filter(SafetyEquipment != "Not Known") %>%
+  mutate(InjurySeverity = 
+           ifelse(InjurySeverity %in%c("Uninjured","Moderate/Minor"),"Not Injured","Injured")) %>%
+ggplot(aes(y = CaseIndividualID, axis1 = Sex, axis2 = SafetyEquipment, 
+           axis3 = InjurySeverity)) +  
+  geom_alluvium(aes(fill = Sex), width = 1/12) +  
+  geom_stratum(width = 1/12, fill = "grey80", color = "grey") +  
+  geom_label(stat = "stratum",aes(label = after_stat(stratum))) +  
+  geom_text(stat = "stratum",
+            aes(label = percent(after_stat(prop), accuracy = .1)),vjust = -0.8, size = 5)+
+  scale_x_discrete(expand = c(.02, .02)) +  
+  scale_fill_brewer(type = "qual", palette = "Set1") +  
+  ggtitle("Injury severity vs. Safety Equipment Status by Sexes") +  
+  theme_void()
+```
+
+We use this alluvial plot show the flow between Sex, Safety Equipment Status and Injury Severity:  
+
+* More accidents happen when drivers have safety equipment deployed.  
+* When safety equipment is deployed, more males are injured than females.  
+* When safety equipment is deployed, drivers are less likely to be injured.  
+* When safety equipment is partly deployed, males are more likely to be uninjured.  
+
