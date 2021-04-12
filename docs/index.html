@@ -72,9 +72,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#basic-information"><i class="fa fa-check"></i><b>2.2</b> Basic Information</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#issues-or-problems-in-data"><i class="fa fa-check"></i><b>2.3</b> Issues or Problems in Data</a></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.4</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -128,15 +129,17 @@
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. Car crashes can be effectively prevented if we avoid to drive when dangerous factors exist. And that is the one of the reason that we can interested in researches of car crashes data.</p>
-<p>To detetct what factors contributed most to car crashes, we looked into 3 data sets from NYS DMV and tried to explain the correlation between those variables by using different visualization methods.</p>
+<p><strong>Overview</strong><br />
+There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. If we can find the patterns of factors which are likely to cause accident, many car accidents might somehow be prevented. This is why we are interested in exploring the car accidents data. In this project, we focused on the car accidents in New York State.</p>
+<p><strong>Main Goal and Questions</strong><br />
+To detect what factors contributed most to car crashes, we looked into 3 datasets collected from 2018-2019 by NYS DMV. We aim at exploring the patterns in variables related to car accidents in New York State.</p>
 <p>Several questions that we are interested in are listed as below.</p>
 <ol style="list-style-type: decimal">
-<li><p>Descriptive analysis of variables. Select some intuitive factors which lead to vehicle crashes and see if there is any association. As for the variable contributing factor, is there any noticeable cluster or trend?</p></li>
-<li><p>Using more variables to explore on a larger dataset, detect if there is any variable that largely contributed to crashes but neglected in question 1. Try to use as many as possible methods such as to find associations between variables.</p></li>
-<li><p>From all the plots we got, what’s the new information we got? Good suggestions to avoid car crashes?</p></li>
+<li><p>In aspect of vehicle, what driving activity tends to cause more accidents? What types of vehicles are more likely to involve in accidents? What factors in road type or vehicle should be noticed?</p></li>
+<li><p>In aspect of accident cases, which regions in NYS have more accidents? What type of accidents are most common? Is hours of a day or months of a year related to number of accident?</p></li>
+<li><p>In aspect of drivers, does age has an effect? Does sex have an effect? Does safety equipment in vehicles have effect? What’s the patterns of injury for accidents in NYS?</p></li>
 </ol>
-<p>Also, diving into event type, we can check if there are some particular associations between action prior to accident and event type or between contributing factor and event types and so on to see which could be the most probable cause of an event?</p>
+<p>Generally, we are interested in exploring many aspects of NYS car accidents and identifying relationship between variables. Hopefully, our findings can be useful to prevent car accidents.</p>
 <p>We hope this article will help readers know more about how to avoid car accidents and have a safe drive!</p>
 
 </div>
@@ -196,20 +199,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

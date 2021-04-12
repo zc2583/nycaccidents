@@ -72,9 +72,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#basic-information"><i class="fa fa-check"></i><b>2.2</b> Basic Information</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#issues-or-problems-in-data"><i class="fa fa-check"></i><b>2.3</b> Issues or Problems in Data</a></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.4</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -126,7 +127,7 @@
 <div id="general-method" class="section level2">
 <h2><span class="header-section-number">3.1</span> General Method</h2>
 <p>From the government website, we downloaded three csv files. When we inspect the data ,we found that except for some missing values, the data provide clean and straightforward information. The numerical inputs are in reasonable domain, and textual inputs are understandable.<br />
-However, every dataset has over one million of rows, which is difficult for us to take the whole data in exploratory data analysis. Thus, we decided to randomly sample 10000 rows per dataset to save time.</p>
+However, every dataset has about or over one million of rows, which is difficult for us to take the whole data in exploratory data analysis. Thus, we decided to randomly sample 10000 rows per dataset to save time.</p>
 </div>
 <div id="unify-missing-values" class="section level2">
 <h2><span class="header-section-number">3.2</span> Unify Missing Values</h2>
@@ -190,20 +191,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

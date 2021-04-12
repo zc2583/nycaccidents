@@ -72,9 +72,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#basic-information"><i class="fa fa-check"></i><b>2.2</b> Basic Information</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#issues-or-problems-in-data"><i class="fa fa-check"></i><b>2.3</b> Issues or Problems in Data</a></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.4</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -126,17 +127,18 @@
 <p>Since we have three datasets and they do not have a common key attribute for us to merge them together, we decided to visualize the missing values in three seperate graphs.</p>
 <div id="vehicle" class="section level2">
 <h2><span class="header-section-number">4.1</span> Vehicle</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>In this dataset, “Type/Axles of Truck or Bus” has all missing values in the column. “Event Type” and “Contributing Factor 1&amp;2 Descriptions” also have many missing values. The other variables contain far less missing values.</p>
 </div>
 <div id="case" class="section level2">
 <h2><span class="header-section-number">4.2</span> Case</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>In this dataset, We had 18 variables in total and we dropped 2 of them. The majority of <span class="math inline">\(DOT.Reference.Marker.Location\)</span> are missing values and the <span class="math inline">\(Pedestrian.Bicyclist.Action\)</span> contains a lot of “Not Applicable” values which cannot offer the information we wnat.</p>
-<p>After transformation and cleaning of the dataset, we got the final data for visualiation use.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>In this dataset, We had 18 variables in total and we dropped 2 of them. The majority of “DOT.Reference.Marker.Location” are missing values and the “Pedestrian.Bicyclist.Action” contains a lot of “Not Applicable” values which cannot offer the information we want.</p>
+<p>After transformation and cleaning of the dataset, we got the final data for visualization use.</p>
 </div>
 <div id="individual" class="section level2">
 <h2><span class="header-section-number">4.3</span> Individual</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>In this dataset, we have 15 variables in total. “Transported_by”, “Injury Location”, “Victim Status” and “Injury Description” have high percent of missing data within the variable.</p>
 
 </div>
@@ -197,20 +199,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

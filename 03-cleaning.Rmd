@@ -2,7 +2,7 @@
 
 ## General Method
 From the government website, we downloaded three csv files. When we inspect the data ,we found that except for some missing values, the data provide clean and straightforward information. The numerical inputs are in reasonable domain, and textual inputs are understandable.  
-However, every dataset has over one million of rows, which is difficult for us to take the whole data in exploratory data analysis. Thus, we decided to randomly sample 10000 rows per dataset to save time.  
+However, every dataset has about or over one million of rows, which is difficult for us to take the whole data in exploratory data analysis. Thus, we decided to randomly sample 10000 rows per dataset to save time.  
 
 ```{r eval=FALSE}
 case_data_full<-read.csv("Case.csv")

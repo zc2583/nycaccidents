@@ -7,18 +7,20 @@ site: bookdown::bookdown_site
 
 # Introduction
 
-There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. Car crashes can be effectively prevented if we avoid to drive when dangerous factors exist. And that is the one of the reason that we can interested in researches of car crashes data.
+**Overview**  
+There were 33,244 fatal motor vehicle crashes in the United States in 2019 in which 36,096 deaths occured. That means car crashes led to 1.11 deaths per 100 million miles traveled. If we can find the patterns of factors which are likely to cause accident, many car accidents might somehow be prevented. This is why we are interested in exploring the car accidents data. In this project, we focused on the car accidents in New York State.  
 
-To detetct what factors contributed most to car crashes, we looked into 3 data sets from NYS DMV and tried to explain the correlation between those variables by using different visualization methods.
+**Main Goal and Questions**  
+To detect what factors contributed most to car crashes, we looked into 3 datasets collected from 2018-2019 by NYS DMV. We aim at exploring the patterns in variables related to car accidents in New York State.  
 
-Several questions that we are interested in are listed as below.
+Several questions that we are interested in are listed as below.  
 
-1. Descriptive analysis of variables. Select some intuitive factors which lead to vehicle crashes and see if there is any association. As for the variable contributing factor, is there any noticeable cluster or trend?
+1. In aspect of vehicle, what driving activity tends to cause more accidents? What types of vehicles are more likely to involve in accidents? What factors in road type or vehicle should be noticed?  
 
-2. Using more variables to explore on a larger dataset, detect if there is any variable that largely contributed to crashes but neglected in question 1. Try to use as many as possible methods such as to find associations between variables.
+2. In aspect of accident cases, which regions in NYS have more accidents? What type of accidents are most common? Is hours of a day or months of a year related to number of accident?  
 
-3. From all the plots we got, what’s the new information we got? Good suggestions to avoid car crashes?
+3. In aspect of drivers, does age has an effect? Does sex have an effect? Does safety equipment in vehicles have effect? What's the patterns of injury for accidents in NYS?  
 
-Also, diving into event type, we can check if there are some particular associations between action prior to accident and event type or between contributing factor and event types and so on to see which could be the most probable cause of an event?
+Generally, we are interested in exploring many aspects of NYS car accidents and identifying relationship between variables. Hopefully, our findings can be useful to prevent car accidents.  
 
-We hope this article will help readers know more about how to avoid car accidents and have a safe drive!
+We hope this article will help readers know more about how to avoid car accidents and have a safe drive!  

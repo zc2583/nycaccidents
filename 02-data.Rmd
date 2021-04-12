@@ -1,26 +1,62 @@
 # Data sources
-## Sources: 
+## Sources  
 
+These three sets record vehicle accidents in States of New York from 2018 to 2019. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.  
+
+**Data of Vehicle Information**  
 https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window
 
+**Data of Individual Information**  
 https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window
 
+**Data of Case Information**  
 https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window
 
 
-## Description
-These three sets record vehicle accidents in States of New York from 2017 to 2020. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.  
+## Basic Information  
 
-There are three aspects: vehicle, individual information and case information. Case ID is the common key attribute across three sets.  
+**Data of Vehicle Information**  
+```{r,message = FALSE,echo = FALSE}
+library(tidyverse)
+vehicle_data_full <- read_csv("~/GR5702/Project/vehicle_original.csv")
+```
 
-Variables include Case Vehicle ID, Vehicle Body Type, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type, Driver Age, Weather Condition, Lighting Condition, Date, Week and so on…  
+```{r,message = FALSE,echo = FALSE}
+dim <- dim(vehicle_data_full)
+paste0("There are ",as.character(dim[1])," rows and ",as.character(dim[2])," variables in this dataset.")
+print("Variables contains:")
+colnames(vehicle_data_full)
+```
 
+**Data of Case Information**  
+```{r,message = FALSE,echo = FALSE}
+case_data_full <- read_csv("~/GR5702/Project/case_original.csv")
+```
 
-## Potential Questions
-We got our data from the Internet which came as .csv files.
+```{r,message = FALSE,echo = FALSE}
+dim <- dim(case_data_full)
+paste0("There are ",as.character(dim[1])," rows and ",as.character(dim[2])," variables in this dataset.")
+print("Variables contains:")
+colnames(case_data_full)
+```
 
-The data we used are from NYS DMV which contains 3 data sets. Those three sets contain attributes about each vehicle involved in a crash as reported to NYS DMV. Variables include Case Vehicle ID, Vehicle Body Type	, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type... Most of which are categorical.
+**Data of Individual Information**  
+```{r,message = FALSE,echo = FALSE}
+individual_data_full <- read_csv("~/GR5702/Project/individual_original.csv")
+```
 
+```{r,message = FALSE,echo = FALSE}
+dim <- dim(individual_data_full)
+paste0("There are ",as.character(dim[1])," rows and ",as.character(dim[2])," variables in this dataset.")
+print("Variables contains:")
+colnames(individual_data_full)
+```
+
+## Issues or Problems in Data  
+Since the data are collected and published by the government, the data is relatively clean. Thus, the categorical inputs are all understandable and numerical inputs are mostly in reasonable domain.  
+However, some variable have large amount of missing values, which cause some troubles in the later section, but the difficulty is manageable. Also, the three datasets cannot be merged together because they do not have a common key, but fortunately, each dataset have good amount of variables to explore.  
+
+## Potential Questions  
 To be more specific, our interest falls on several aspects: 
 
 About Accident Cases:

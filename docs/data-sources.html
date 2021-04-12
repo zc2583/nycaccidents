@@ -72,9 +72,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#basic-information"><i class="fa fa-check"></i><b>2.2</b> Basic Information</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#issues-or-problems-in-data"><i class="fa fa-check"></i><b>2.3</b> Issues or Problems in Data</a></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.4</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -124,21 +125,58 @@
 <div id="data-sources" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Data sources</h1>
 <div id="sources" class="section level2">
-<h2><span class="header-section-number">2.1</span> Sources:</h2>
-<p><a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window</a></p>
-<p><a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window</a></p>
-<p><a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window</a></p>
+<h2><span class="header-section-number">2.1</span> Sources</h2>
+<p>These three sets record vehicle accidents in States of New York from 2018 to 2019. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.</p>
+<p><strong>Data of Vehicle Information</strong><br />
+<a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-vehicle-information-three-year-window</a></p>
+<p><strong>Data of Individual Information</strong><br />
+<a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-individual-information-three-year-window</a></p>
+<p><strong>Data of Case Information</strong><br />
+<a href="https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window" class="uri">https://catalog.data.gov/dataset/motor-vehicle-crashes-case-information-three-year-window</a></p>
 </div>
-<div id="description" class="section level2">
-<h2><span class="header-section-number">2.2</span> Description</h2>
-<p>These three sets record vehicle accidents in States of New York from 2017 to 2020. Data are from US government public data. The three sets contain different attributes about each vehicle accident reported to NYS DMV.</p>
-<p>There are three aspects: vehicle, individual information and case information. Case ID is the common key attribute across three sets.</p>
-<p>Variables include Case Vehicle ID, Vehicle Body Type, Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type, Driver Age, Weather Condition, Lighting Condition, Date, Week and so on…</p>
+<div id="basic-information" class="section level2">
+<h2><span class="header-section-number">2.2</span> Basic Information</h2>
+<p><strong>Data of Vehicle Information</strong></p>
+<pre><code>## [1] &quot;There are 1648853 rows and 19 variables in this dataset.&quot;</code></pre>
+<pre><code>## [1] &quot;Variables contains:&quot;</code></pre>
+<pre><code>##  [1] &quot;Year&quot;                              &quot;Case Vehicle ID&quot;                  
+##  [3] &quot;Vehicle Body Type&quot;                 &quot;Registration Class&quot;               
+##  [5] &quot;Action Prior to Accident&quot;          &quot;Type / Axles of Truck or Bus&quot;     
+##  [7] &quot;Direction of Travel&quot;               &quot;Fuel Type&quot;                        
+##  [9] &quot;Vehicle Year&quot;                      &quot;State of Registration&quot;            
+## [11] &quot;Number of Occupants&quot;               &quot;Engine Cylinders&quot;                 
+## [13] &quot;Vehicle Make&quot;                      &quot;Contributing Factor 1&quot;            
+## [15] &quot;Contributing Factor 1 Description&quot; &quot;Contributing Factor 2&quot;            
+## [17] &quot;Contributing Factor 2 Description&quot; &quot;Event Type&quot;                       
+## [19] &quot;Partial VIN&quot;</code></pre>
+<p><strong>Data of Case Information</strong></p>
+<pre><code>## [1] &quot;There are 881617 rows and 18 variables in this dataset.&quot;</code></pre>
+<pre><code>## [1] &quot;Variables contains:&quot;</code></pre>
+<pre><code>##  [1] &quot;Year&quot;                          &quot;Crash Descriptor&quot;             
+##  [3] &quot;Time&quot;                          &quot;Date&quot;                         
+##  [5] &quot;Day of Week&quot;                   &quot;Police Report&quot;                
+##  [7] &quot;Lighting Conditions&quot;           &quot;Municipality&quot;                 
+##  [9] &quot;Collision Type Descriptor&quot;     &quot;County Name&quot;                  
+## [11] &quot;Road Descriptor&quot;               &quot;Weather Conditions&quot;           
+## [13] &quot;Traffic Control Device&quot;        &quot;Road Surface Conditions&quot;      
+## [15] &quot;DOT Reference Marker Location&quot; &quot;Pedestrian Bicyclist Action&quot;  
+## [17] &quot;Event Descriptor&quot;              &quot;Number of Vehicles Involved&quot;</code></pre>
+<p><strong>Data of Individual Information</strong></p>
+<pre><code>## [1] &quot;There are 2175084 rows and 15 variables in this dataset.&quot;</code></pre>
+<pre><code>## [1] &quot;Variables contains:&quot;</code></pre>
+<pre><code>##  [1] &quot;Year&quot;               &quot;Case Individual ID&quot; &quot;Case Vehicle ID&quot;   
+##  [4] &quot;Victim Status&quot;      &quot;Role Type&quot;          &quot;Seating Position&quot;  
+##  [7] &quot;Ejection&quot;           &quot;License State Code&quot; &quot;Sex&quot;               
+## [10] &quot;Transported By&quot;     &quot;Safety Equipment&quot;   &quot;Injury Descriptor&quot; 
+## [13] &quot;Injury Location&quot;    &quot;Injury Severity&quot;    &quot;Age&quot;</code></pre>
+</div>
+<div id="issues-or-problems-in-data" class="section level2">
+<h2><span class="header-section-number">2.3</span> Issues or Problems in Data</h2>
+<p>Since the data are collected and published by the government, the data is relatively clean. Thus, the categorical inputs are all understandable and numerical inputs are mostly in reasonable domain.<br />
+However, some variable have large amount of missing values, which cause some troubles in the later section, but the difficulty is manageable. Also, the three datasets cannot be merged together because they do not have a common key, but fortunately, each dataset have good amount of variables to explore.</p>
 </div>
 <div id="potential-questions" class="section level2">
-<h2><span class="header-section-number">2.3</span> Potential Questions</h2>
-<p>We got our data from the Internet which came as .csv files.</p>
-<p>The data we used are from NYS DMV which contains 3 data sets. Those three sets contain attributes about each vehicle involved in a crash as reported to NYS DMV. Variables include Case Vehicle ID, Vehicle Body Type , Action Prior to Accident, Direction of Travel, Vehicle Year, State of Registration, Number of Occupants, Vehicle Make, Contributing Factor, Event Type… Most of which are categorical.</p>
+<h2><span class="header-section-number">2.4</span> Potential Questions</h2>
 <p>To be more specific, our interest falls on several aspects:</p>
 <p>About Accident Cases:
 1. Distribution of the number of accidents across time (Date, time, weekdays)?
@@ -210,20 +248,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

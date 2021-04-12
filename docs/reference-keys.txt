@@ -1,7 +1,8 @@
 introduction
 data-sources
 sources
-description
+basic-information
+issues-or-problems-in-data
 potential-questions
 data-transformation
 general-method

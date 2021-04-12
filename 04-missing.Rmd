@@ -26,6 +26,8 @@ for (i in 1:ncol(df1)) {
 gg_miss_var(df1, show_pct = TRUE)
 ```
 
+In this dataset, "Type/Axles of Truck or Bus" has all missing values in the column. "Event Type" and "Contributing Factor 1&2 Descriptions" also have many missing values. The other variables contain far less missing values.  
+
 ## Case
 ```{r,message = FALSE,echo = FALSE}
 df2 <- read_csv("~/GR5702/Project/Case.csv")
@@ -46,9 +48,9 @@ for (i in 1:ncol(df2)) {
 gg_miss_var(df2, show_pct = TRUE)
 ```
 
-In this dataset, We had 18 variables in total and we dropped 2 of them. The majority of $DOT.Reference.Marker.Location$ are missing values and the $Pedestrian.Bicyclist.Action$ contains a lot of "Not Applicable" values which cannot offer the information we wnat. 
+In this dataset, We had 18 variables in total and we dropped 2 of them. The majority of "DOT.Reference.Marker.Location" are missing values and the "Pedestrian.Bicyclist.Action" contains a lot of "Not Applicable" values which cannot offer the information we want. 
 
-After transformation and cleaning of the dataset, we got the final data for visualiation use. 
+After transformation and cleaning of the dataset, we got the final data for visualization use. 
 
 ## Individual
 ```{r,message = FALSE,echo = FALSE}

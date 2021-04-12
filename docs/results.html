@@ -72,9 +72,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#basic-information"><i class="fa fa-check"></i><b>2.2</b> Basic Information</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#issues-or-problems-in-data"><i class="fa fa-check"></i><b>2.3</b> Issues or Problems in Data</a></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.4</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -126,7 +127,7 @@
 <p>In this part, we will show our EDA results in three categories related to vehicles involved in accidents, cases information and individuals in accidents.</p>
 <div id="vehicles" class="section level2">
 <h2><span class="header-section-number">5.1</span> Vehicles</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>From this plot, we can see:</p>
 <ul>
 <li>Most of the accidents happen when cars go straight Ahead.<br />
@@ -136,7 +137,7 @@
 <li>The patterns of all these prior actions are similar between 2018 and 2019. One interesting thing is that in 2018, there is no accidents related to Police Pursuit, but in 2019, there is a few cases.</li>
 </ul>
 <p>Thus, it looks like in the situations when drivers are going fast ahead or driving in a crowded place, such as in traffic or in parking lot, accidents are more likely to happen than the other prior actions.</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p>Since there are about 30 unique types of descriptions on accidents, I select the top 11 most frequent and reasonable textual descriptions on the causes of accidents. From this plot, we can see that:</p>
 <ul>
 <li>“Driver Inattention” is the top reason causing accidents.<br />
@@ -150,7 +151,7 @@
 <li>In 2019, there are less accidents due to “Alcohol Involvement”. Probably New York States took this issue seriously in 2019.<br />
 Thus, the top four categories seem to be the frequent causes for accidents. The pattern fro 2018 is different from 2019 in the other smaller causes.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-23-1.png" width="960" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-29-1.png" width="960" /></p>
 <p>This is a mosaic plot with 3 variable: Vehicle_Body_Type, Contributing_Factor and Year.
 Since there are multiple unique Vehicle Body Types, we filter on the top 5 types involved in accidents. We also filter on contributing_Factor: E stands for “environmental factor” and “V” stands for “vehicle factor”.<br />
 From this plot, we can see:</p>
@@ -161,7 +162,7 @@ From this plot, we can see:</p>
 </li>
 <li>Larger proportion of accidents of “4 Door Sedan” and “2 Door Sedan” is related to “environmental factor” in 2019 than in 2018.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-24-1.png" width="960" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-30-1.png" width="960" /></p>
 <p>From this plot, we can see:</p>
 <ul>
 <li>For “4 Engine Cylinder” vehicles, “Sedan” and “Suburban” are more likely to have accidents.</li>
@@ -171,7 +172,7 @@ From this plot, we can see:</p>
 </div>
 <div id="case-1" class="section level2">
 <h2><span class="header-section-number">5.2</span> Case</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <p>For the case data, we looked into the count of different types of accidents at first. We can see apparently from the bar plot that:</p>
 <ul>
 <li>Property Damage Accident occurred the most.<br />
@@ -180,7 +181,7 @@ From this plot, we can see:</p>
 </li>
 <li>Fatal Accident happened the least.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <p>Then we used a cleveland plot to see where accidents happened the counties in New York State with the top 8 accident frequency:</p>
 <ul>
 <li>Crash accidents happened the most in “Queens” County.</li>
@@ -188,7 +189,7 @@ From this plot, we can see:</p>
 </li>
 <li>There are other counties other than these 8 counties, but each of them has a relatively much smaller proportion of accidents when compared with the first 4 counties above.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>In this plot, we visualize the variation of number of accidents in Hours of a day. The line plots are split by years.</p>
 <ul>
 <li>Two years have the same trend.<br />
@@ -203,7 +204,7 @@ From this plot, we can see:</p>
 </li>
 <li>Since 18PM, the number of accidents keeps dropping as the sun goes down.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-29-1.png" width="960" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-35-1.png" width="960" /></p>
 <p>In this plot, we use a heatmap to show the frequency of accidents in specific “Road Type” and “Road Surface Condition”. In “Road Type”, “straight and level” has much more intensive weight than the other types because majority of road is this type. Thus, for visualization purpose, we exclude this type and focus on the other less common types:</p>
 <ul>
 <li>Even if we exclude the “straight and level” road type, “straight and Grade” has the top frequency. This is aligned with the finding in the first section that most of accidents happen when the cars go straight ahead. Probably some drivers tend to drive faster in straight road.<br />
@@ -214,7 +215,7 @@ From this plot, we can see:</p>
 </div>
 <div id="individual-1" class="section level2">
 <h2><span class="header-section-number">5.3</span> Individual</h2>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <p>From this plot, we can see that:</p>
 <ul>
 <li>In each age group, more males are involved in accidents than females.<br />
@@ -225,7 +226,7 @@ From this plot, we can see:</p>
 </li>
 <li>Then, the number of accidents is constantly decreasing.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p>Since majority of people in the accident are uninjured or only minor injured, we decided to explore the patterns in serious injuries.</p>
 <ul>
 <li>More males are injured to death than females.<br />
@@ -234,7 +235,7 @@ From this plot, we can see:</p>
 </li>
 <li>More males are recorded as unconscious or semiconscious. It is possible that males tend to involve in more serious accidents.</li>
 </ul>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <p>We use this alluvial plot show the flow between Sex, Safety Equipment Status and Injury Severity:</p>
 <ul>
 <li>More accidents happen when drivers have safety equipment deployed.<br />
@@ -304,20 +305,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
