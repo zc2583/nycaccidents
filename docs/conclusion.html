@@ -21,10 +21,10 @@
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="By Zhongsheng Chen | Jingyue Lou | Mingyan Zou" />
 
 
-<meta name="date" content="2021-04-11" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,9 +72,9 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.0.1</b> Sources:</a></li>
-<li class="chapter" data-level="2.0.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.0.2</b> Description</a></li>
-<li class="chapter" data-level="2.0.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.0.3</b> Potential Questions</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#sources"><i class="fa fa-check"></i><b>2.1</b> Sources:</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#description"><i class="fa fa-check"></i><b>2.2</b> Description</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#potential-questions"><i class="fa fa-check"></i><b>2.3</b> Potential Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#general-method"><i class="fa fa-check"></i><b>3.1</b> General Method</a></li>
@@ -93,7 +93,15 @@
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a><ul>
 <li class="chapter" data-level="6.1" data-path="interactive-component.html"><a href="interactive-component.html#up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state"><i class="fa fa-check"></i><b>6.1</b> Up-and-Down Trend of Monthly Number of Accidents in New York State</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a><ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#limitation"><i class="fa fa-check"></i><b>7.1</b> Limitation</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="conclusion.html"><a href="conclusion.html#imbalanced-inputs-in-variables"><i class="fa fa-check"></i><b>7.1.1</b> Imbalanced Inputs in Variables</a></li>
+<li class="chapter" data-level="7.1.2" data-path="conclusion.html"><a href="conclusion.html#missing-values-1"><i class="fa fa-check"></i><b>7.1.2</b> Missing Values</a></li>
+<li class="chapter" data-level="7.1.3" data-path="conclusion.html"><a href="conclusion.html#not-all-variables-were-used"><i class="fa fa-check"></i><b>7.1.3</b> Not All variables Were Used</a></li>
+<li class="chapter" data-level="7.1.4" data-path="conclusion.html"><a href="conclusion.html#data-is-too-large-to-plot-locally"><i class="fa fa-check"></i><b>7.1.4</b> Data is Too Large to Plot Locally</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#future-lessons-and-directions"><i class="fa fa-check"></i><b>7.2</b> Future Lessons and Directions</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -115,7 +123,51 @@
             <section class="normal" id="section-">
 <div id="conclusion" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Conclusion</h1>
+<div id="limitation" class="section level2">
+<h2><span class="header-section-number">7.1</span> Limitation</h2>
+<div id="imbalanced-inputs-in-variables" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Imbalanced Inputs in Variables</h3>
+<p>The datasets suffered imbalanced distribution in many variables as many variables contain different proportion of values and missing value. Thus, visualization results can potentially be biased:</p>
+<ul>
+<li>A variable can be 80% of input “A” but only 2% of input “B”. During visualization, we tried to unite inputs in small proportion in order to minimize the effect of unbalance.<br />
+</li>
+<li>For example, in variable “Road Type”, “straight Road” is where accidents happened the most, while it might be attributed to the case that most roads are straight.</li>
+</ul>
+</div>
+<div id="missing-values-1" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Missing Values</h3>
+<p>The deletion of missing values may influence the overall patterns between variables:</p>
+<ul>
+<li>In many plots, we or the default setting excluded the missing values from a variable and the related rows of data. It is possible that this action can delete useful information in other variables.<br />
+</li>
+<li>Missing values can potentially be the key to capture a pattern. When they are missed, the visualized pattern might be misleading.<br />
+</li>
+<li>For example, when plotting relationships between sexes and victim status, many missing values are in victim status. Thus, the graph of sex and victim status may be incomplete to capture the patterns between two variables; There might be risks in concluding that sex is associated with victim status under car crashes.</li>
+</ul>
+</div>
+<div id="not-all-variables-were-used" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Not All variables Were Used</h3>
+<p>We have three datasets for three aspects of car accidents. In total, we have more than 40 variables. Thus, we are unable to explore relationship between every possible pairs of variables. Other unused variable can contain other useful patterns or information.</p>
+</div>
+<div id="data-is-too-large-to-plot-locally" class="section level3">
+<h3><span class="header-section-number">7.1.4</span> Data is Too Large to Plot Locally</h3>
+<p>We have three datasets. Each of them contain millions of rows and more than 10 variables. Thus, it will take painfully long time to visualize the whole data in our local computer. Thus, we decided to sample the data to show the general trend. However, it is possible that we have a sample deviated from the general trends.</p>
+</div>
+</div>
+<div id="future-lessons-and-directions" class="section level2">
+<h2><span class="header-section-number">7.2</span> Future Lessons and Directions</h2>
+<p>In this part, we discuss what we have learned during our project and potential directions to improve our results:</p>
+<ul>
+<li><strong>For too large datasets</strong>, we can first select the variables we want to use for a single graph in order to shorten the runtime. Then we can explore overall patterns in the original datasets and compare it with our patterns in sample data.<br />
+</li>
+<li><strong>For missing values</strong>, we can try imputing missing values first or delete it if it only occupies a small percentage in the data before analysis in future research.<br />
+</li>
+<li><strong>For imbalancned data</strong>, we can unite the smaller groups of inputs to a larger group. Otherwise, we can focus on subsets of groups, where the proportion is more balanced. We can also sample the data according to the proportions of imbalanced inputs in a variable.<br />
+</li>
+<li><strong>To better use of all variables</strong> such as location, we can apply geographic plot to extract more information in the future.</li>
+</ul>
 
+</div>
 </div>
             </section>
 

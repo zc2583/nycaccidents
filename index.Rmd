@@ -1,6 +1,6 @@
 --- 
 title: "EDA on NYC Car Accidents"
-author: "YOUR NAMES HERE"
+author: "By Zhongsheng Chen | Jingyue Lou | Mingyan Zou"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---

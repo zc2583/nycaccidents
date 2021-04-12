@@ -27,7 +27,7 @@ df1 %>% select(`Action Prior to Accident`, Year) %>%
   ggplot(aes(x=reorder(`Action Prior to Accident`,count), count)) +
   geom_point()+
   geom_bar(aes(fill=count),stat="identity",show.legend = FALSE) +
-  scale_fill_gradient(low = "green", high = "red")+
+  scale_fill_gradient(low = "white", high = "blue")+
   facet_wrap(~Year) +
   coord_flip() + 
   labs(y = "Number of Accidents", x="Actions Prior to Accidents") +
@@ -58,7 +58,7 @@ df1 %>%
   ggplot(aes(x=reorder(`Contributing Factor 1 Description`,count), count)) +
   geom_point()+
   geom_bar(aes(fill=count),stat="identity",show.legend = FALSE) +
-  scale_fill_gradient(low = "green", high = "red")+
+  scale_fill_gradient(low = "white", high = "blue")+
   facet_wrap(~Year) +
   coord_flip()+ 
   labs(y = "Number of Accidents", x="Accidents Descriptions") +
@@ -84,7 +84,9 @@ df_mosaic <- df1 %>%
          Contributing_Factor = ifelse(`Contributing Factor 1`=="ENVMT","E","V"))
 
 mosaic(Contributing_Factor~Vehicle_Body_Type+Year, direction = c("v","h","v"),
-       data=df_mosaic)
+       data=df_mosaic,highlighting_fill= brewer.pal(4, "Set2"),
+       main = "Mosaic Plot of Vehicle Type vs. year vs. Contributing Factor",
+       sub = "E for Environmental Factor, V for Vehicle Factor")
 ```
 
 This is a mosaic plot with 3 variable: Vehicle_Body_Type, Contributing_Factor and Year. 
@@ -101,11 +103,12 @@ df_mosaic <- df1 %>% select(`Vehicle Body Type`,`Engine Cylinders`,Year) %>%
   filter(`Vehicle Body Type` %in% c("SUBURBAN","4 DOOR SEDAN","PICKUP TRUCK",
                                     "2 DOOR SEDAN","VAN TRUCK")) %>%
   filter(`Engine Cylinders` %in% c(4,5,6,8)) %>%
-  mutate(Vehicle_Body_Type = `Vehicle Body Type`, Engine_Cylinders = `Engine Cylinders`)
+  mutate(Vehicle_Body_Type = `Vehicle Body Type`, Number_of_Engine_Cylinders = `Engine Cylinders`)
 
-mosaic(Engine_Cylinders~Vehicle_Body_Type,direction = c("v", "h"),
+mosaic(Number_of_Engine_Cylinders~Vehicle_Body_Type,direction = c("v", "h"),
        data=df_mosaic, 
-       highlighting_fill= brewer.pal(4, "Set3"))
+       highlighting_fill= brewer.pal(4, "Set3"),
+       main = "Mosaic Plot of Vehicle Type vs. Number of Engine Cylinders")
 ```
 
 From this plot, we can see:  
@@ -243,10 +246,11 @@ df3_inj <- df3_full %>%
 
 
 vcd::mosaic(Sex~Victim_Status,data=df3_inj,
+            main="Mosaic Plot of Sex vs. Victim Status",
             labeling = labeling_border(tl_labels = c(TRUE, FALSE, FALSE),
                                   rot_labels = 0,
                                   gp_labels = gpar(fontsize = 10),
-                                  gp_varnames = gpar(fontsize = 14,
+                                  gp_varnames = gpar(fontsize = 15,
                                                      fontface = 2),
                                   offset_labels = c(0, -3),
                                   offset_varnames = 0))

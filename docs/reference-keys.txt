@@ -17,3 +17,9 @@ individual-1
 interactive-component
 up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state
 conclusion
+limitation
+imbalanced-inputs-in-variables
+missing-values-1
+not-all-variables-were-used
+data-is-too-large-to-plot-locally
+future-lessons-and-directions

@@ -1,2 +1,34 @@
 # Conclusion
 
+## Limitation
+
+### Imbalanced Inputs in Variables
+The datasets suffered imbalanced distribution in many variables as many variables contain different proportion of values and missing value. Thus, visualization results can potentially be biased:  
+
+* A variable can be 80% of input "A" but only 2% of input "B". During visualization, we tried to unite inputs in small proportion in order to minimize the effect of unbalance.  
+* For example, in variable "Road Type", "straight Road" is where accidents happened the most, while it might be attributed to the case that most roads are straight.  
+
+### Missing Values
+The deletion of missing values may influence the overall patterns between variables:  
+
+* In many plots, we or the default setting excluded the missing values from a variable and the related rows of data. It is possible that this action can delete useful information in other variables.  
+* Missing values can potentially be the key to capture a pattern. When they are missed, the visualized pattern might be misleading.  
+* For example, when plotting relationships between sexes and victim status, many missing values are in victim status. Thus, the graph of sex and victim status may be incomplete to capture the patterns between two variables; There might be risks in concluding that sex is associated with victim status under car crashes.  
+
+### Not All variables Were Used 
+We have three datasets for three aspects of car accidents. In total, we have more than 40 variables. Thus, we are unable to explore relationship between every possible pairs of variables. Other unused variable can contain other useful patterns or information.  
+
+### Data is Too Large to Plot Locally
+We have three datasets. Each of them contain millions of rows and more than 10 variables. Thus, it will take painfully long time to visualize the whole data in our local computer. Thus, we decided to sample the data to show the general trend. However, it is possible that we have a sample deviated from the general trends.  
+
+
+## Future Lessons and Directions
+In this part, we discuss what we have learned during our project and potential directions to improve our results:  
+
+*	**For too large datasets**, we can first select the variables we want to use for a single graph in order to shorten the runtime. Then we can explore overall patterns in the original datasets and compare it with our patterns in sample data.   
+* **For missing values**, we can try imputing missing values first or delete it if it only occupies a small percentage in the data before analysis in future research.  
+* **For imbalancned data**, we can unite the smaller groups of inputs to a larger group. Otherwise, we can focus on subsets of groups, where the proportion is more balanced. We can also sample the data according to the proportions of imbalanced inputs in a variable.   
+*	**To better use of all variables** such as location, we can apply geographic plot to extract more information in the future.  
+
+
+
