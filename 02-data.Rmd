@@ -65,11 +65,12 @@ About Accident Cases:
 
 About Drivers:
 1.	Association between Injured severity and safety equipment?
-2.	Association between Injured severity and seating position?
+2.	Association between Injured severity and sexes?
 
 About Vehicle:
 1.	Relationship between number of accidents and Vehicle year?
-2.	Relationship between number of accidents and number of occupants?
-3.	Relationship between number of accidents and number of vehicle cylinder?
+2.	Relationship between number of accidents and number of vehicle cylinder?
+
+**More specific questions are explored in the EDA part.**
 
 The original data contains more than 800,000 samples each. For the convenience of later use, we did some random sampling. Before diving into the visualization work, we found some potential problems around the our data. Firstly, there are some misssing values in the data. Secondly, we need to select some variales that contribute the most to car crashes. Lastly, since most of our variables are categorical, we need to find better methods for visualization.

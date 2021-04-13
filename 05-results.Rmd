@@ -2,7 +2,7 @@
 In this part, we will show our EDA results in three categories related to vehicles involved in accidents, cases information and individuals in accidents.  
 
 
-## Vehicles
+## Aspect of Accident Vehicles
 ```{r,message = FALSE,echo = FALSE}
 library(tidyverse)
 library(RColorBrewer)
@@ -118,7 +118,7 @@ From this plot, we can see:
 * There are a few cars with "5 Engine Cylinder" involved in accidents.  
 
 
-## Case
+## Aspect of Accident Cases
 ```{r, message = FALSE,echo = FALSE}
 df2<-read_csv("~/GR5702/Project/Case.csv")
 ```
@@ -204,7 +204,7 @@ In this plot, we use a heatmap to show the frequency of accidents in specific "R
 * Whatever the road surface is dry, wet or with snow, the "Straight and Grade" road still have the largest frequency.
 * When the road is on "Hill Crest", there are only a few accidents. Of course there are much less these road types. However, on hill crest, drivers are also drive more carefully than usual.  
 
-## Individual
+## Aspect of Individuals in Accidents
 ```{r,message = FALSE,echo = FALSE}
 df3 <- read_csv("~/GR5702/Project/Individual.csv")
 ```
@@ -284,6 +284,7 @@ data <- read_csv("~/GR5702/Project/newsample.csv", col_types = cols(
 data %>% 
   filter(Sex != "U") %>%
   filter(SafetyEquipment != "Not Known") %>%
+  filter(SeatingPosition == "Driver") %>%
   mutate(InjurySeverity = 
            ifelse(InjurySeverity %in%c("Uninjured","Moderate/Minor"),"Not Injured","Injured")) %>%
 ggplot(aes(y = CaseIndividualID, axis1 = Sex, axis2 = SafetyEquipment, 
@@ -295,7 +296,7 @@ ggplot(aes(y = CaseIndividualID, axis1 = Sex, axis2 = SafetyEquipment,
             aes(label = percent(after_stat(prop), accuracy = .1)),vjust = -0.8, size = 5)+
   scale_x_discrete(expand = c(.02, .02)) +  
   scale_fill_brewer(type = "qual", palette = "Set1") +  
-  ggtitle("Injury severity vs. Safety Equipment Status by Sexes") +  
+  ggtitle("Driver Injury severity vs. Safety Equipment Status by Sexes") +  
   theme_void()
 ```
 
