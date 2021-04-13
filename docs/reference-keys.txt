@@ -16,7 +16,7 @@ aspect-of-accident-vehicles-1
 aspect-of-accident-cases-1
 aspect-of-individuals-in-accidents-1
 interactive-component
-up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state
+up-and-down-trend-of-monthly-number-of-accidents-in-new-york-state-from-2018-2019
 conclusion
 limitation
 imbalanced-inputs-in-variables

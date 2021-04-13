@@ -1,7 +1,12 @@
 # Interactive component
-## Up-and-Down Trend of Monthly Number of Accidents in New York State
+## Up-and-Down Trend of Monthly Number of Accidents in New York State from 2018-2019
 This D3 animated plot is inspired by the bar chart of the monthly accidents in a year. There is an obvious up-and down trend across months. The number of accidents is higher in the beginning, middle and the end of the year.  
 Though the static plot can show this trend, here we want to visualize this trend in a more compelling and animated way.  
+
+In this plot:  
+
+* Y-axis: monthly number of accidents from 2018-2019 in total  
+* X-axis: months  
 
 
 <script src="https://d3js.org/d3.v6.js"></script>
