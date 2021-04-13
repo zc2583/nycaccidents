@@ -59,17 +59,17 @@ However, some variable have large amount of missing values, which cause some tro
 ## Potential Questions  
 To be more specific, our interest falls on several aspects: 
 
-About Accident Cases:
-1.	Distribution of the number of accidents across time (Date, time, weekdays)?
-2.	Any environmental factors (weather condition, road surface, lighting condition) related to accidents?
+About Accident Cases:  
+1.	Distribution of the number of accidents across time (Date, time, weekdays)?  
+2.	Any environmental factors (weather condition, road surface, lighting condition) related to accidents?  
 
-About Drivers:
-1.	Association between Injured severity and safety equipment?
-2.	Association between Injured severity and sexes?
+About Drivers:  
+1.	Association between Injured severity and safety equipment?  
+2.	Association between Injured severity and sexes?  
 
-About Vehicle:
-1.	Relationship between number of accidents and Vehicle year?
-2.	Relationship between number of accidents and number of vehicle cylinder?
+About Vehicle:  
+1.	Relationship between number of accidents and Vehicle year?  
+2.	Relationship between number of accidents and number of vehicle cylinder?  
 
 **More specific questions are explored in the EDA part.**
 
